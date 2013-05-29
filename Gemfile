@@ -37,3 +37,8 @@ gem 'unicorn'
 # To use debugger
 gem 'debugger'
 gem 'pivotal_git_scripts'
+
+group :test do
+  gem 'minitest-rails'
+  gem 'cucumber-rails'
+end
