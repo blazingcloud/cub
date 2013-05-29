@@ -61,6 +61,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.4)
     pg (0.15.1)
+    pivotal_git_scripts (1.1.4)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -120,6 +121,7 @@ DEPENDENCIES
   debugger
   jquery-rails
   pg
+  pivotal_git_scripts
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
