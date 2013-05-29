@@ -39,6 +39,8 @@ gem 'debugger'
 gem 'pivotal_git_scripts'
 
 group :test do
-  gem 'minitest-rails'
+  #gem 'minitest-rails'
+  gem 'minitest-spec-rails'
   gem 'cucumber-rails'
+  gem 'poltergeist'
 end
