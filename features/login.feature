@@ -9,9 +9,9 @@ Scenario: Anonymous user visits site
   Then I should see the 'connect' button
 
 Scenario: Creating an account
-  Given I am not an existing user
+  Given There is no user with email "tyra@blazingcloud.net"
   When I visit the home page
-  And I sign up for an account with my LinkedIn profile
+  And I sign up for an account with my LinkedIn profile ("tyra@blazingcloud.net")
   Then I should see the events page
   And I should see my name
 

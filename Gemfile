@@ -37,7 +37,10 @@ gem 'thin'
 
 # To use debugger
 gem 'debugger'
+
+# Cub!
 gem 'pivotal_git_scripts'
+gem 'omniauth-singly'
 
 group :test do
   #gem 'minitest-rails'
