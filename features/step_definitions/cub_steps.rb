@@ -1,3 +1,9 @@
+def assert_logged_in
+  visit "/"
+  page.has_content?("Log out").must_equal(true)
+  current_path.must_equal("/")
+end
+
 def assert_not_logged_in
   visit "/"
   page.has_content?("connect").must_equal(true)
@@ -19,10 +25,14 @@ Given(/^There is no user with email "([^"]*)"$/) do |email|
   User.where(:email => email).count.must_equal(0)
 end
 When(/^I sign up for an account with my LinkedIn profile \("([^"]*)"\)$/) do |email|
-  pending
+  click_link "connect"
 end
 
 When(/^I logout$/) do
   visit "/logout"
   assert_not_logged_in
+end
+
+Then(/^I should be logged in$/) do
+  assert_logged_in
 end

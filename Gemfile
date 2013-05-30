@@ -42,6 +42,7 @@ gem 'thin'
 # Cub!
 gem 'pivotal_git_scripts'
 gem 'omniauth-singly'
+gem 'httparty'
 
 group :test do
   #gem 'minitest-rails'
@@ -54,4 +55,5 @@ end
 group :development, :test do
   gem 'ruby-debug-base19x'
   gem 'ruby-debug-ide'
+  gem 'fakeweb'
 end

@@ -22,7 +22,15 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Please connect with LinkedIn</p>
+        <% if @profiles %>
+            <p>Welcome back!</p>
+        <% else %>
+          <% if session[:access_token] %>
+            <p>Log out</p>
+          <% else %>
+            <p>Please <%= link_to 'connect', '/auth/singly?service=linkedin' %> with LinkedIn</p>
+          <% end %>
+        <% end %>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>

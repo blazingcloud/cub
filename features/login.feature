@@ -12,12 +12,19 @@ Scenario: Creating an account
   Given There is no user with email "tyra@blazingcloud.net"
   When I visit the home page
   And I sign up for an account with my LinkedIn profile ("tyra@blazingcloud.net")
-  Then I should see the events page
-  And I should see my name
+  Then I should be logged in
 
-Scenario: Logging in
-  Given I am a user of the site
+Scenario: First time logging in
+  Given I am a user of LinkedIn
   When I login
+  Then I should be redirected to LinkedIn to login
+
+
+Scenario: Subsequent log in
+  Given I am a user of LinkedIn
+  When I login
+  Then I should be redirected to LinkedIn to login
+  When I authorize with LinkedIn
   Then I should see the events page
   And I should see my name
 
