@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 
@@ -43,4 +44,5 @@ group :test do
   gem 'minitest-spec-rails'
   gem 'cucumber-rails'
   gem 'poltergeist'
+  gem 'database_cleaner'
 end

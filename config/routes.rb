@@ -1,4 +1,6 @@
 Cub::Application.routes.draw do
+  match '/' => 'home_page#index', :as => :home
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
