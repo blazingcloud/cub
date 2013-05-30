@@ -35,8 +35,9 @@ gem 'thin'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-gem 'debugger'
+# gem 'debugger' cause RubyMine debugger to skip breakpoints
+# See http://stackoverflow.com/questions/11672201/unable-to-debug-in-rubymine-4-5-using-ruby-1-9-3
+# gem 'debugger'
 
 # Cub!
 gem 'pivotal_git_scripts'
@@ -48,4 +49,9 @@ group :test do
   gem 'cucumber-rails'
   gem 'poltergeist'
   gem 'database_cleaner'
+end
+
+group :development, :test do
+  gem 'ruby-debug-base19x'
+  gem 'ruby-debug-ide'
 end
