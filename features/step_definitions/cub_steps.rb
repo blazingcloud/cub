@@ -10,6 +10,12 @@ def assert_not_logged_in
   current_path.must_equal("/")
 end
 
+PAGES = {"New Event" => "/events/new"}
+
+def page_should_be(page_name)
+  current_path.must_equal(PAGES[page_name])
+end
+
 Given(/^I visit the (.*) page$/) do |page|
   visit(path_for(page))
 end
@@ -53,4 +59,7 @@ Then(/^I should see the "([^"]*)" link$/) do |link|
 end
 When(/^I click on "([^"]*)"$/) do |element|
   click_on(element)
+end
+Then(/^I should be on the "([^"]*)" page$/) do |page_name|
+  page_should_be(page_name)
 end

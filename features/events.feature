@@ -15,8 +15,8 @@ Feature: List of events and conferences
   Scenario: New event page
     Given There is no event named "Women 2.0"
     When I visit the home page
-    And I click on "create"
-    Then I am redirected to a blank event page
+    And I click on "New Event"
+    Then I should be on the "New Event" page
 
   @wip
   Scenario: Creating an event
