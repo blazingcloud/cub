@@ -12,15 +12,16 @@ Feature: List of events and conferences
     Then I should see "WWDC 2013"
     And  I should see "Dutch Mobile 2013"
 
+  Scenario: New event page
+    Given There is no event named "Women 2.0"
+    When I visit the home page
+    And I click on "create"
+    Then I am redirected to a blank event page
+
   @wip
   Scenario: Creating an event
-    Given There is no event named Women2.0
-    When I visit the home page
-    Then I should see a create button
-    When I press create
-    Then I see form to fill int
-    When I enter Women2.0 in the name and press Save
-    Then I see Women2.0 in the event list
+    When I fill out a new event
+    And I click save
 
   @wip
   Scenario: Create a duplicate event

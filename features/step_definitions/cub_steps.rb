@@ -18,7 +18,7 @@ When(/^I am not logged in$/) do
   assert_not_logged_in
 end
 
-Then(/^I should see the '(.*)' button$/) do |button|
+Then(/^I should see the "([^"]*)" button$/) do |button|
   page.has_content?(button).must_equal(true)
 end
 Given(/^There is no user with email "([^"]*)"$/) do |email|
@@ -44,4 +44,13 @@ Given(/^the following events exist:$/) do |events_table|
 end
 Then(/^I should see "([^"]*)"$/) do |text|
   page.has_content?(text).must_equal(true)
+end
+Given(/^There is no event named "([^"]*)"$/) do |event_name|
+  Event.where(:name => event_name).count.must_equal(0)
+end
+Then(/^I should see the "([^"]*)" link$/) do |link|
+  page.has_link?(link).must_equal(true)
+end
+When(/^I click on "([^"]*)"$/) do |element|
+  click_on(element)
 end

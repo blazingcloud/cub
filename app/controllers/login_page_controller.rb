@@ -1,4 +1,4 @@
-class HomePageController < ApplicationController
+class LoginPageController < ApplicationController
   def home
     if access_token
       @profiles = HTTParty.get(profiles_url,

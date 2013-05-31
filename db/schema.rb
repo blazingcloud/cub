@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20130531204903) do
     t.text     "description"
     t.date     "start_date"
     t.date     "end_date"
+    t.string   "website"
     t.string   "location"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
