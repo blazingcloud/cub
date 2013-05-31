@@ -1,22 +1,4 @@
-def assert_logged_in
-  visit "/"
-  page.has_content?("Log out").must_equal(true)
-  current_path.must_equal("/")
-end
-
-def assert_not_logged_in
-  visit "/"
-  page.has_content?("connect").must_equal(true)
-  current_path.must_equal("/")
-end
-
-PAGES = {"New Event" => "/events/new"}
-
-def page_should_be(page_name)
-  current_path.must_equal(PAGES[page_name])
-end
-
-Given(/^I visit the (.*) page$/) do |page|
+Given(/^I visit the "(.*)" page$/) do |page|
   visit(path_for(page))
 end
 
@@ -62,4 +44,8 @@ When(/^I click on "([^"]*)"$/) do |element|
 end
 Then(/^I should be on the "([^"]*)" page$/) do |page_name|
   page_should_be(page_name)
+end
+When(/^I fill out and save details for the "([^"]*)" event$/) do |event_name|
+  fill_out_event(event_name)
+  click_on("Create Event")
 end

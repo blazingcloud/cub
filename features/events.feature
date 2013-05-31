@@ -8,20 +8,23 @@ Feature: List of events and conferences
     | name              | start_date  | end_date    | location               |
     | WWDC 2013         | 2013-06-10  | 2013-06-14  | San Francisco, CA, USA |
     | Dutch Mobile 2013 | 2013-06-06  | 2013-06-08  | Amsterdam, Netherlands |
-    When I visit the home page
+    When I visit the "home" page
     Then I should see "WWDC 2013"
     And  I should see "Dutch Mobile 2013"
 
   Scenario: New event page
-    Given There is no event named "Women 2.0"
-    When I visit the home page
+    When I visit the "home" page
     And I click on "New Event"
     Then I should be on the "New Event" page
 
-  @wip
   Scenario: Creating an event
-    When I fill out a new event
-    And I click save
+    Given There is no event named "Women 2.0"
+    When I visit the "New Event" page
+    And I fill out and save details for the "Women 2.0" event
+    Then I should see "Event was successfully created."
+    And I should see "Women 2.0"
+    When I visit the "home" page
+    Then I should see "Women 2.0"
 
   @wip
   Scenario: Create a duplicate event
