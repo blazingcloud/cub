@@ -3,6 +3,7 @@ Feature: Login
   As a user
   I want to sign in with my LinkedIn credentials
 
+@wip
 Scenario: Anonymous user visits site
   Given I am not logged in
   When I visit the home page

@@ -57,4 +57,5 @@ group :development, :test do
   gem 'ruby-debug-ide'
   gem 'fakeweb'
   gem 'factory_girl_rails'
+  gem 'launchy'
 end

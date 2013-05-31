@@ -5,7 +5,7 @@ Feature: List of events and conferences
 
   Scenario: List of existing conferences
     Given the following events exist:
-    | name              | start date  | end date    | location               |
+    | name              | start_date  | end_date    | location               |
     | WWDC 2013         | 2013-06-10  | 2013-06-14  | San Francisco, CA, USA |
     | Dutch Mobile 2013 | 2013-06-06  | 2013-06-08  | Amsterdam, Netherlands |
     When I visit the home page

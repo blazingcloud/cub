@@ -38,8 +38,8 @@ Then(/^I should be logged in$/) do
 end
 Given(/^the following events exist:$/) do |events_table|
   # table is a | WWDC 2013         | 2013-06-10  | 2013-06-14  | San Francisco, CA, USA |
-  events_table.hashes do |event_hash|
-    Factory.create(:event_hash)
+  events_table.hashes.each do |event_hash|
+    FactoryGirl.create(:event, event_hash)
   end
 end
 Then(/^I should see "([^"]*)"$/) do |text|
