@@ -49,3 +49,6 @@ When(/^I fill out and save details for the "([^"]*)" event$/) do |event_name|
   fill_out_event(event_name)
   click_on("Create Event")
 end
+Given(/^There is an event named "([^"]*)"$/) do |event_name|
+  FactoryGirl.create(:event, :name => event_name)
+end
