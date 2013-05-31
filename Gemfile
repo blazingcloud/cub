@@ -56,4 +56,5 @@ group :development, :test do
   gem 'ruby-debug-base19x'
   gem 'ruby-debug-ide'
   gem 'fakeweb'
+  gem 'factory_girl_rails'
 end

@@ -36,3 +36,12 @@ end
 Then(/^I should be logged in$/) do
   assert_logged_in
 end
+Given(/^the following events exist:$/) do |events_table|
+  # table is a | WWDC 2013         | 2013-06-10  | 2013-06-14  | San Francisco, CA, USA |
+  events_table.hashes do |event_hash|
+    Factory.create(:event_hash)
+  end
+end
+Then(/^I should see "([^"]*)"$/) do |text|
+  page.has_content?(text).must_equal(true)
+end
