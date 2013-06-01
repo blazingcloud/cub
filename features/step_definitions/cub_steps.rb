@@ -52,3 +52,14 @@ end
 Given(/^There is an event named "([^"]*)"$/) do |event_name|
   FactoryGirl.create(:event, :name => event_name)
 end
+Given(/^The following sessions exist for the "([^"]*)" event:$/) do |event_name, sessions_table|
+  event = FactoryGirl.create(:event, :name => event_name)
+  # table is a | iOS 7 UIKit          | 2013-06-10 14:30 |room 201   |
+  sessions_table.hashes.each do |session_hash|
+    FactoryGirl.create(:session, session_hash.merge(:event => event))
+  end
+end
+When(/^I visit the "([^"]*)" Event page$/) do |event_name|
+  event = Event.find_by_name(event_name)
+  visit event_path(event)
+end

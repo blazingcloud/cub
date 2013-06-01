@@ -26,16 +26,9 @@ Feature: List of events and conferences
     When I visit the "home" page
     Then I should see "Women 2.0"
 
-#  @wip
-#  Scenario: Create a duplicate event
-#    Given There is an event named Women2.0
-#    When I visit the home page
-#    And I press create
-#    When I enter Women2.0 in the name
-#    Then I should see a message 'There is already Women2.0 conference, would you like to see it?'
-#
   Scenario: Clicking on event name
     Given There is an event named "Women 2.0"
     When I visit the "home" page
     And I click on "Women 2.0"
     Then I should see "Women 2.0"
+

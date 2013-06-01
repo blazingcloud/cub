@@ -1,4 +1,7 @@
 Cub::Application.routes.draw do
+  resources :sessions
+
+
   #match '/' => 'home_page#index', :as => :home
   #match "auth/:service"          => "auth#service"
   #match "auth/:service/callback" => "auth#callback"
