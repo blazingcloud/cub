@@ -33,3 +33,20 @@
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+<table>
+  <thead>
+  <th>Name</th>
+  <th>Time</th>
+  <th>Location</th>
+  </thead>
+  <tbody>
+<% @sessions.each do |session| %>
+  <tr>
+    <td><%= session.name %></td>
+    <td><%= session.start_time %></td>
+    <td><%= session.location %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>

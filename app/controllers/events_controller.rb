@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    @sessions = @event.sessions
 
     respond_to do |format|
       format.html # show.html.erb
