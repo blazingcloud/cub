@@ -63,3 +63,6 @@ When(/^I visit the "([^"]*)" Event page$/) do |event_name|
   event = Event.find_by_name(event_name)
   visit event_path(event)
 end
+When(/^I enter "([^"]*)" in the "([^"]*)" field$/) do |text, field|
+  fill_in(field, :with => text)
+end

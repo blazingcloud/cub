@@ -10,4 +10,3 @@ Feature: List of session in a conference
     | OS X Core Animation  | 2013-06-12 10:15 |room 402   |
     When I visit the "WWDC 2013" Event page
     And  I should see "iOS 7 UIKit"
-
