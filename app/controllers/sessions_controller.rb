@@ -2,7 +2,14 @@ class SessionsController < ApplicationController
   # GET /sessions
   # GET /sessions.json
   def index
-    @sessions = Session.all
+    @sessions = Session.all.map do |session|
+      {
+        name: session.name,
+        start_time: session.start_time,
+        location: session.location,
+        link: session_path(session)
+      }
+    end
 
     respond_to do |format|
       format.html # index.html.erb
