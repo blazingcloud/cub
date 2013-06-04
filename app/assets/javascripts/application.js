@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require ng-grid-2.0.6.min.js
+//= require cub
+//= require_tree .

@@ -1,23 +1,22 @@
 
-function SessionsController($scope, $http, $location) {
-//  $scope.sessions = [];
+cub.controller('SessionsController', function ($scope, $http, $location) {
+  $scope.sessions = [];
 
   $scope.updateSessions = function () {
     $http.get('/sessions.json').success(function(data, status, headers, config) {
       $scope.sessions = data;
+      $scope.gridOptions = { data: 'sessions' }
   });
   };
 
   $scope.updateSessions();
 
-  $scope.gridOptions = { data: $scope.sessions }
-
+  $scope.gridOptions = { data: 'sessions' };
 
     $scope.eventPath = function() {
       var re = /\/events\/(\d+)/;
       return window.location.pathname.match(re)[1];
     };
-
 
   $scope.addSession = function () {
     $http.post('/sessions.json', {
@@ -31,5 +30,6 @@ function SessionsController($scope, $http, $location) {
     $scope.sessionName = '';
   };
 
-}
+});
+
 

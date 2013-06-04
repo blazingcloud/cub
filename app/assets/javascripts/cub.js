@@ -1,1 +1,1 @@
-angular.module('cub',['cubEvents']);
+var cub = angular.module('cub',['ngGrid']);
