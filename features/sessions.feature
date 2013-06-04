@@ -3,6 +3,7 @@ Feature: List of session in a conference
   As a user
   I want to see what sessions are available and create one
 
+  @javascript
   Scenario: List of existing sessions
     Given The following sessions exist for the "WWDC 2013" event:
     | name                 | start_time  | location  |

@@ -34,29 +34,18 @@
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
 
+
+
 <div ng-app="cub">
   <div ng-controller="SessionsController">
+
     <form ng-submit="addSession()">
       <label for="new_session_name">Create New Session:</label>
-      <input id="new_session_name" type="text" ng-model="NewSession" placeholder="Session Name">
+      <input id="new_session_name" type="text" ng-model="newSessionName" placeholder="Session Name">
       <input class="btn-primary" type="submit" value="add">
     </form>
 
-    <table id="event_sessions">
-      <thead>
-      <th>Name</th>
-      <th>Time</th>
-      <th>Location</th>
-      </thead>
-      <tbody>
-      <% @sessions.each do |session| %>
-        <tr>
-          <td><%= session.name %></td>
-          <td><%= session.start_time %></td>
-          <td><%= session.location %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+    <div class="gridStyle" ng-grid="gridOptions"></div>
+
   </div>
 </div>

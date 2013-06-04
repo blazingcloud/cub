@@ -1,18 +1,33 @@
-$(document).ready(function(){
-  $('#event_sessions').dataTable();
-});
+
+function SessionsController($scope, $http, $location) {
+//  $scope.sessions = [];
+
+  $scope.updateSessions = function () {
+    $http.get('/sessions.json').success(function(data, status, headers, config) {
+      $scope.sessions = data;
+  });
+  };
+
+  $scope.updateSessions();
+
+  $scope.gridOptions = { data: $scope.sessions }
 
 
-function SessionsController($scope) {
-  $scope.sessions = [
-    {name:'learn angular'},
-    {name:'build an angular app'}];
+    $scope.eventPath = function() {
+      var re = /\/events\/(\d+)/;
+      return window.location.pathname.match(re)[1];
+    };
 
-  $scope.addSession = function() {
-    // send to server
-    // retrieve list from server
-    // update $scope.sessions
-    $scope.sessions.push({text:$scope.name});
+
+  $scope.addSession = function () {
+    $http.post('/sessions.json', {
+      session: {
+        "name": $scope.newSessionName
+      },
+      event_id: $scope.eventPath()
+    }).success(function (data, status, headers, config) {
+        $scope.updateSessions();
+      });
     $scope.sessionName = '';
   };
 
