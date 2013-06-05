@@ -10,10 +10,10 @@ $(document).ready(function () {
     }
   );
 
-  theFirepad.on('ready', function() {
-//    alert(theFirepad.getHtml());
-//    $(theFirepad.getHtml()).appendTo($('readOnlyFirepad'));
-      $('#readOnlyFirepad').html(theFirepad.getHtml());
-    });
+  theFirepad.on('ready', function () {
+    var $html = $(theFirepad.getHtml());
+//    $html.find('font[size]').each(function(index, element) {var $el = $(element); $el.css('font-size', $el.attr('size')+'px')})
+    $('#readOnlyFirepad').html($html);
+  });
 
 });
