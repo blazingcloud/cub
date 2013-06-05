@@ -1,4 +1,4 @@
-cub.controller('SessionsController', function ($scope, $http, $location) {
+cub.controller('SessionsController', ['$scope', '$http', function($scope, $http, $location) {
   $scope.sessions = [];
   $scope.gridOptions = {
     data: 'sessions',
@@ -32,6 +32,4 @@ cub.controller('SessionsController', function ($scope, $http, $location) {
     $scope.sessionName = '';
   };
 
-});
-
-
+}]);
