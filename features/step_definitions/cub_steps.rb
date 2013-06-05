@@ -66,3 +66,17 @@ end
 When(/^I enter "([^"]*)" in the "([^"]*)" field$/) do |text, field|
   fill_in(field, :with => text + '\n')
 end
+Given(/^There is a session named "([^"]*)"$/) do |session_name|
+  FactoryGirl.create(:session, {:name => session_name})
+end
+When(/^I visit the "([^"]*)" Session page$/) do |session_name|
+  session = Session.find_by_name(session_name)
+  visit session_path(session)
+end
+When(/^I fill out and save details for the "([^"]*)" session$/) do |session_name|
+  fill_out_session(session_name)
+  click_on("Update Session")
+end
+Then(/^details for "([^"]*)" should be saved$/) do |session_name|
+  page.has_content?("#{session_name} updated").must_equal(true)
+end

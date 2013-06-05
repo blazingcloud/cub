@@ -9,9 +9,9 @@ Scenario: Create Session
   When I visit the "WWDC 2013" Event page
   And I enter "Keynote" in the "Create New Session" field
   And I click on "add"
-  Then I should see "Keynote"
+  Then I should see the "Keynote" link
 
-@wip
+@javascript
 Scenario: Editing Session details
   Given There is a session named "WWDC 2013 Keynote"
   When I visit the "WWDC 2013 Keynote" Session page

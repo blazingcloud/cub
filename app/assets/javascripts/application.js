@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require ng-grid-2.0.6.min.js
+//= require codemirror
+//= require firepad
 //= require cub
 //= require_tree .
