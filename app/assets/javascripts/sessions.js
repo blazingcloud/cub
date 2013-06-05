@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var firepadRef = new Firebase('http://cubnotes.firebaseIO.com/' + window.location.pathname);
   var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
-  var firepad = Firepad.fromCodeMirror(
+  theFirepad = Firepad.fromCodeMirror(
     firepadRef,
     codeMirror,
     {
@@ -9,4 +9,11 @@ $(document).ready(function () {
       richTextToolbar: true
     }
   );
-})
+
+  theFirepad.on('ready', function() {
+//    alert(theFirepad.getHtml());
+//    $(theFirepad.getHtml()).appendTo($('readOnlyFirepad'));
+      $('#readOnlyFirepad').html(theFirepad.getHtml());
+    });
+
+});
