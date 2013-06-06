@@ -22,7 +22,8 @@ $(document).ready(function () {
     $('#firepad').css('display', 'block');
     $('#firepad').css('opacity', '1');
     $('#readOnlyFirepad').css('display', 'none');
-    $('#edit_button').text('Save');
+//    $('#edit_button').text('Save');
+    $('#edit_button').css('display', 'none');
     // TODO: restore edit button back to the original state
     $('#edit_button').click(function () {
         $('#firepad').css('display', 'none');
