@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #firepad {
-  border: grey 1px solid;
   height: auto;
   overflow-x: auto;
   overflow-y: hidden;
@@ -10,20 +9,21 @@
 }
 
 .firepad-with-toolbar .CodeMirror {
-  left: 5px;
-  bottom: 5px;
 }
 
 .CodeMirror {
   height: 780px;
   overflow-x: hidden;
   overflow-y: hidden;
-  width: 99%;
+  margin: 1em;
+  padding: 1em;
+  left: 0 !important;
 }
 
 .firepad {
   min-height: 780px;
-  background-color: #ddd; /* dark orange background */
+  margin: 1em;
+  background-color: #c9c9c9;
 }
 
 .CodeMirror-scroll {
