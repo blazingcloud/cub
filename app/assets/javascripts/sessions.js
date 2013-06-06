@@ -14,11 +14,13 @@ $(document).ready(function () {
     var $html = $(firepad.getHtml());
 //    $html.find('font[size]').each(function(index, element) {var $el = $(element); $el.css('font-size', $el.attr('size')+'px')})
     $('#readOnlyFirepad').html($html);
+    $('#firepad').css('display', 'none');
   });
 
 
   $('#edit_button').click(function() {
     $('#firepad').css('display', 'block');
+    $('#firepad').css('opacity', '1');
     $('#readOnlyFirepad').css('display', 'none');
     $('#edit_button').css('display', 'none');
   });
