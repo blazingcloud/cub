@@ -11,9 +11,9 @@ $(document).ready(function () {
   );
 
   firepad.on('ready', function () {
-    var $html = $(firepad.getHtml());
+//    var $html = $(firepad.getHtml());
 //    $html.find('font[size]').each(function(index, element) {var $el = $(element); $el.css('font-size', $el.attr('size')+'px')})
-    $('#readOnlyFirepad').html($html);
+    $('#readOnlyFirepad').html(firepad.getHtml());
     $('#firepad').css('display', 'none');
   });
 
