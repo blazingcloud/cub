@@ -16,4 +16,10 @@ $(document).ready(function () {
     $('#readOnlyFirepad').html($html);
   });
 
+
+  $('#edit_button').click(function() {
+    $('#firepad').css('display', 'block');
+    $('#readOnlyFirepad').css('display', 'none');
+    $('#edit_button').css('display', 'none');
+  });
 });
