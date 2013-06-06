@@ -8,31 +8,35 @@
 
 <div class="content-area">
 
-  <button id="edit_button" class="btn btn-large btn-primary" type="button">Edit</button>
+  <div class="hero-unit">
+    <p>
+      <b>Name:</b>
+      <%= @session.name %>
+    </p>
 
+    <p>
+      <b>Start time:</b>
+      <%= @session.start_time %>
+    </p>
 
-<p>
-  <b>Name:</b>
-  <%= @session.name %>
-</p>
+    <p>
+      <b>Location:</b>
+      <%= @session.location %>
+    </p>
 
-<p>
-  <b>Start time:</b>
-  <%= @session.start_time %>
-</p>
+    <p>
+      <b>Event:</b>
+      <%= @session.event_id %>
+    </p>
+  </div>
+  <div>
+    <button id="edit_button" class="btn btn-large btn-primary" type="button">Edit</button>
+    <div id="firepad">
+    </div>
 
-<p>
-  <b>Location:</b>
-  <%= @session.location %>
-</p>
+    <div id="readOnlyFirepad">
+    </div>
+  </div>
 
-<p>
-  <b>Event:</b>
-  <%= @session.event_id %>
-</p>
-
-<div id="firepad"></div>
-
-<div id="readOnlyFirepad"></div>
 
 </div>
