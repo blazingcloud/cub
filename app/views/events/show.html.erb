@@ -1,6 +1,6 @@
 <ul class="breadcrumb">
-  <li><a href="#"><%= link_to 'Home', '/' %></a> <span class="divider">/</span> </li>
-  <li class="active"><%= @event.name %> Sessions</li>
+  <li><%= link_to 'Events', root_path %><span class="divider">/</span></li>
+  <li class="active"><%= @event.name%></li>
 </ul>
 
 <p id="notice"><%= notice %></p>
@@ -36,8 +36,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_event_path(@event) %>
 
 
 

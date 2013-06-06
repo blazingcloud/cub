@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <ul class="breadcrumb">
-  <li><a href="#">Events</a> <span class="divider">/</span></li>
-  <li><a href="#">Sessions</a> <span class="divider">/</span></li>
+  <li><%= link_to("Events", root_path) %><span class="divider">/</span></li>
+  <li><%= link_to(@event.name, event_path(@event)) %><span class="divider">/</span></li>
   <li class="active"><%= @session.name %></li>
 </ul>
 
