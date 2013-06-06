@@ -2,20 +2,51 @@
   <li><a href="#">Events</a> <span class="divider">/</span></li>
 </ul>
 
-<h1>Events</h1>
+<div class="content-area">
 
+<h1 text-align="center">CubNotes</h1>
+
+  <table id="events-list" class="table table-bordered">
 <% @events.each do |event| %>
-  <ul>
-    <li><%= link_to event.name, event_path(event) %> (<%= event.location %>, starts on <%= event.start_date %>)</li>
-  </ul>
+      <thead>
+      <tr>
+        <th>
+          Event
+        </th>
+        <th>
+          Location
+        </th>
+        <th>
+          Dates
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+    <%= link_to event.name, event_path(event) %>
+        </td>
+        <td>
+          <%= event.location %>
+        </td>
+        <td>
+          <%= event.start_date %> - <%= event.start_date %>
+        </td>
+      </tr>
+      </tbody>
 <% end %>
+
+  </table>
+
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
+  <!-- Button to trigger modal -->
+<a href="#myModal" role="button" class="btn" data-toggle="modal">New Event</a>
 
-<!-- Button to trigger modal -->
-<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+
+<!--<%= link_to 'New Event', new_event_path %>-->
+</div>
 
 <!-- Modal -->
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
