@@ -8,6 +8,19 @@
   opacity: 0;
 }
 
+.content-area {
+  margin: 2em;
+  padding: 1em;
+}
+
+#readOnlyFirepad {
+  margin: 2em;
+}
+
+#edit_button {
+  float: right;
+}
+
 .firepad-with-toolbar .CodeMirror {
 }
 
@@ -22,7 +35,6 @@
 
 .firepad {
   min-height: 780px;
-  margin: 1em;
   background-color: #c9c9c9;
 }
 

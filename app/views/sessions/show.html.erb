@@ -6,6 +6,11 @@
   <li class="active"><%= @session.name %></li>
 </ul>
 
+<div class="content-area">
+
+  <button id="edit_button" class="btn btn-large btn-primary" type="button">Edit</button>
+
+
 <p>
   <b>Name:</b>
   <%= @session.name %>
@@ -26,8 +31,8 @@
   <%= @session.event_id %>
 </p>
 
-<div id="edit_button">Edit</div>
-
 <div id="firepad"></div>
 
 <div id="readOnlyFirepad"></div>
+
+</div>
