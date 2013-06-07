@@ -36,8 +36,15 @@
 </p>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %>
+<a href="#editEvent" role="button" class="btn" data-toggle="modal">Edit</a>
 
+<div id="editEvent" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="editEventLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="editEventLabel">Edit Event</h3>
+  </div>
+  <%= render 'form' %>
+</div>
 
 
 <div ng-app="cub">
