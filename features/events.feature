@@ -12,11 +12,7 @@ Feature: List of events and conferences
     Then I should see "WWDC 2013"
     And  I should see "Dutch Mobile 2013"
 
-  Scenario: New event page
-    When I visit the "home" page
-    And I click on "New Event"
-    Then I should be on the "New Event" page
-
+    @wip
   Scenario: Creating an event
     Given There is no event named "Women 2.0"
     When I visit the "New Event" page
@@ -26,6 +22,7 @@ Feature: List of events and conferences
     When I visit the "home" page
     Then I should see "Women 2.0"
 
+      @wip
   Scenario: Clicking on event name
     Given There is an event named "Women 2.0"
     When I visit the "home" page

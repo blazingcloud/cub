@@ -11,7 +11,7 @@ Scenario: Create Session
   And I click on "add"
   Then I should see the "Keynote" link
 
-@javascript
+@javascript @wip
 Scenario: Editing Session details
   Given There is a session named "WWDC 2013 Keynote"
   When I visit the "WWDC 2013 Keynote" Session page
