@@ -43,6 +43,7 @@ gem 'thin'
 gem 'pivotal_git_scripts'
 gem 'omniauth-singly'
 gem 'httparty'
+gem 'rack-rewrite'
 
 group :test do
   #gem 'minitest-rails'
