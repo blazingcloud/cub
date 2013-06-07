@@ -7,25 +7,25 @@ cub.controller('SessionsController', ['$scope', '$http', function($scope, $http,
                      { field: 'location', cellClass: 'Location'} ]
   };
 
+  $scope.eventIdFromPath = function () {
+    var re = /\/events\/(\d+)/;
+    return window.location.pathname.match(re)[1];
+  };
+
   $scope.updateSessions = function () {
-    $http.get('/sessions.json').success(function (data, status, headers, config) {
+    $http.get('/sessions.json?event_id=' + $scope.eventIdFromPath()).success(function (data, status, headers, config) {
       $scope.sessions = data;
     });
   };
 
   $scope.updateSessions();
 
-  $scope.eventPath = function () {
-    var re = /\/events\/(\d+)/;
-    return window.location.pathname.match(re)[1];
-  };
-
   $scope.addSession = function () {
     $http.post('/sessions.json', {
       session: {
         "name": $scope.newSessionName
       },
-      event_id: $scope.eventPath()
+      event_id: $scope.eventIdFromPath()
     }).success(function (data, status, headers, config) {
         $scope.updateSessions();
       });

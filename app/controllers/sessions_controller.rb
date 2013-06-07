@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   # GET /sessions
   # GET /sessions.json
   def index
-    @sessions = Session.all.map do |session|
+    @sessions = Session.where(:event_id => params[:event_id]).map do |session|
       {
         name: session.name,
         start_time: session.start_time,

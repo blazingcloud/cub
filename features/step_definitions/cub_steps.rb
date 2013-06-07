@@ -33,6 +33,9 @@ end
 Then(/^I should see "([^"]*)"$/) do |text|
   page.has_content?(text).must_equal(true)
 end
+Then(/^I should not see "([^"]*)"$/) do |text|
+  page.has_content?(text).must_equal(false)
+end
 Given(/^There is no event named "([^"]*)"$/) do |event_name|
   Event.where(:name => event_name).count.must_equal(0)
 end
