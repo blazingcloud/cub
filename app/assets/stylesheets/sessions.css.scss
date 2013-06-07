@@ -34,12 +34,11 @@
 }
 
 #edit_button {
-  position: absolute;
-  right: 3.2em;
-  top: 20em;
+  position: relative;
+  right: 1em;
+  top: 1em;
   z-index: 2;
   float: right;
-  clear: both;
 }
 
 .firepad-with-toolbar .CodeMirror {
