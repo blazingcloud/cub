@@ -1,5 +1,5 @@
-<%= form_for(@event) do |f| %>
-  <div class="modal-body">
+<div class="modal-body">
+  <%= form_for(@event, :html => {:class => 'form-horizontal'}) do |f| %>
     <% if @event.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -12,39 +12,45 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :name %>
-      <br/>
-      <%= f.text_field :name %>
+    <div class="control-group">
+      <%= f.label :name, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :name %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :description %>
-      <br/>
-      <%= f.text_area :description %>
+    <div class="control-group">
+      <%= f.label :description, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :description, :class => "modal-text-area" %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :start_date %>
-      <br/>
-      <%= f.text_field :start_date, :type => "date" %>
+    <div class="control-group">
+      <%= f.label :start_date, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :start_date, :type => "date" %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :end_date %>
-      <br/>
-      <%= f.text_field :end_date, :type => "date" %>
+    <div class="control-group">
+      <%= f.label :end_date, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :end_date, :type => "date" %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :location %>
-      <br/>
-      <%= f.text_field :location %>
+    <div class="control-group">
+      <%= f.label :location, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :location %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :url %>
-      <br/>
-      <%= f.text_field :url %>
+    <div class="control-group">
+      <%= f.label :url, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :url %>
+      </div>
     </div>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
-  </div>
-<% end %>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <button class="btn btn-primary">Save changes</button>
+    </div>
+  <% end %>
